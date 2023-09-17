@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
   searchBtn: {
     width: 50,
     height: "100%",
-    backgroundColor: COLORS.tertiary,
+    backgroundColor: COLORS.babyBlue,
     borderRadius: SIZES.medium,
     justifyContent: "center",
     alignItems: "center",
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
   searchBtnImage: {
     width: "50%",
     height: "50%",
-    tintColor: COLORS.white,
+    tintColor: COLORS.lightWhite,
   },
   tabsContainer: {
     width: "100%",

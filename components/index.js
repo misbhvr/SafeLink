@@ -2,7 +2,7 @@ import ScreenHeaderBtn from "./common/header/ScreenHeaderBtn";
 
 // home screen
 import Welcome from "./home/welcome/Welcome";
-import NearbyMap from "./home/nearby/NearbyMap";
+import CurrentDisasters from "./home/current/CurrentDisasters";
 import Donations from "./home/donations/Donations";
 
 // job details screen
@@ -13,17 +13,16 @@ import { default as JobFooter } from "./disasterdetails/footer/Footer";
 import Specifics from "./disasterdetails/specifics/Specifics";
 
 // common
-import NearbyJobCard from "./common/cards/nearby/NearbyJobCard";
+
 
 export {
   ScreenHeaderBtn,
   Welcome,
-  NearbyMap,
+  CurrentDisasters,
   Donations,
   DisasterInfo,
   JobTabs,
   JobAbout,
   JobFooter,
   Specifics,
-  NearbyJobCard
 };

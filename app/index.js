@@ -1,8 +1,11 @@
-import { View, Text, ScrollView, SafeAreaView } from 'react-native';
+import { View, Text, ScrollView, SafeAreaView, Image } from 'react-native';
 import { useState } from 'react';
 import { Stack, useRouter } from 'expo-router';
 import { COLORS, icons, images, SIZES } from '../constants';
-import { NearbyMap, Donations, ScreenHeaderBtn, Welcome } from '../components';
+import { CurrentDisasters, Donations, ScreenHeaderBtn, Welcome } from '../components';
+import UserMap from "../components/home/usermap/UserMap";
+import SafeLink from '../assets/icons/logo.png';
+
 
 
 const Home = () => {
@@ -15,28 +18,29 @@ const Home = () => {
               <ScreenHeaderBtn iconUrl = {icons.menu} dimension = "60%"/>
             ),
           headerRight: () => (
-              <ScreenHeaderBtn iconUrl = {icons.profile} dimension = "100%"/>
+              <ScreenHeaderBtn iconUrl = {images.profile} dimension = "100%"/>
           ),
-          headerTitle: ""
+          headerTitle: () => (
+              <View style={{ alignItems: 'center', justifyContent: 'center'}}>
+                  <Image
+                      source={SafeLink}
+                      style={{ width: 65, height: 40, resizeMode: 'contain'}}
+                  />
+              </View>
+          ),
           }}
       />
 
         <ScrollView showsVerticalScrollIndicator={false}>
-            <View
-                style={{
-                    flex: 1,
-                    padding: SIZES.medium
-                }}
-                >
-                <Welcome
-
-                    />
+            <View style={{flex: 1, padding: SIZES.medium}}>
+                <Welcome/>
+                <CurrentDisasters />
+                <UserMap />
                 <Donations />
-                <NearbyMap />
             </View>
         </ScrollView>
     </SafeAreaView>
   )
-}
+};
 
 export default Home;
