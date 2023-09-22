@@ -1,2 +1,0 @@
-console.log("This is the app class");
-console.log("second update");
