@@ -5,27 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ecd5147-8ffe-407c-8ebe-e6a836538306" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/components/common/cards/disaster/CurrentDisasterCard.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/home/current/CurrentDisasters.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/_layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/_layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/cards/nearby/NearbyJobCard.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/cards/nearby/nearbyjobcard.style.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/cards/popular/PopularJobCard.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/cards/popular/popularjobcard.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/cards/disaster/currentdisastercard.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/common/cards/disaster/CurrentDisasterCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/cards/disaster/CurrentDisasterCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/common/cards/weatherinfo/WeatherInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/cards/weatherinfo/WeatherInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/common/cards/weatherinfo/weatherinfo.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/cards/weatherinfo/weatherinfo.style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/common/header/ScreenHeaderBtn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/header/ScreenHeaderBtn.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/donations/Donations.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/donations/Donations.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/nearby/NearbyMap.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/nearby/nearbymap.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/current/currentdisasters.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/welcome/Welcome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/welcome/Welcome.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/welcome/welcome.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/welcome/welcome.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/disasterdetails/donate/Donate.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/disasterdetails/donate/donate.style.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/donations/Donations.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/donations/donations.style.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/icons.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/icons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/images.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/images.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/constants/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/constants/theme.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +71,8 @@
       <recent name="C:\Users\Jason\PhpstormProjects\SafeLink\components\home\usermap" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Jason\PhpstormProjects\SafeLink\app" />
+      <recent name="C:\Users\Jason\PhpstormProjects\SafeLink\components\home\login" />
       <recent name="C:\Users\Jason\PhpstormProjects\SafeLink\components\common\cards\weatherinfo" />
     </key>
   </component>

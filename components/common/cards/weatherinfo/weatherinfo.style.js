@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         flexDirection: "row",
         height: 50,
+        paddingHorizontal: 5,
     },
     info: {
         width: 110,

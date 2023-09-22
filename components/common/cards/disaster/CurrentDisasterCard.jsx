@@ -28,7 +28,11 @@ const CurrentDisasterCard = () => {
             await waitBeforeRequest(1000);
             const response = await axios.request(options);
             if(response.status === 200){
-                setWeatherData(response.data);
+                const { forecast } = response.data;
+                if (forecast && forecast.forecastday && forecast.forecastday.length >= 3) {
+                    const nextThreeDays = forecast.forecastday.slice(0, 3);
+                    setWeatherData(nextThreeDays);
+                }
             }
             else{
                 setWeatherData(null)
@@ -57,18 +61,10 @@ const CurrentDisasterCard = () => {
         )
     }
 
-    const currentDate = new Date();
-    const currentDayIndex = currentDate.getDay();
-    const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const nextDay1Index = (currentDayIndex + 1) % 7;
-    const nextDay2Index = (currentDayIndex + 2) % 7;
-
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.headerTitle}>
-                    {dayNames[currentDayIndex]}
-                </Text>
+                <Text style={styles.headerTitle}>Current Disaster</Text>
             </View>
             <WeatherInfo weatherData={weatherData}/>
         </View>

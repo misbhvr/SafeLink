@@ -1,24 +1,30 @@
-import { View, Text, ScrollView, SafeAreaView, Image } from 'react-native';
+import {View, Text, ScrollView, SafeAreaView, Image, Alert} from 'react-native';
 import { useState } from 'react';
 import { Stack, useRouter } from 'expo-router';
 import { COLORS, icons, images, SIZES } from '../constants';
-import { CurrentDisasters, Donations, ScreenHeaderBtn, Welcome } from '../components';
+import { CurrentDisasters, ScreenHeaderBtn, Welcome } from '../components';
 import UserMap from "../components/home/usermap/UserMap";
 import SafeLink from '../assets/icons/logo.png';
-
-
+import { router } from 'expo-router';
 
 const Home = () => {
-    const router = useRouter();
   return (
     <SafeAreaView style = {{flex: 1, backgroundColor: COLORS.lightWhite}}>
       <Stack.Screen options = {{ headerStyle : { backgroundColor: COLORS.lightWhite },
           headerShadowVisible: false,
           headerLeft: () => (
-              <ScreenHeaderBtn iconUrl = {icons.menu} dimension = "60%"/>
+              <ScreenHeaderBtn
+                  iconUrl = {icons.menu}
+                  dimension = "60%"
+                  onPress = {() => Alert.alert('Menu')}
+              />
             ),
           headerRight: () => (
-              <ScreenHeaderBtn iconUrl = {images.profile} dimension = "100%"/>
+              <ScreenHeaderBtn
+                  iconUrl = {images.profile}
+                  dimension = "100%"
+                  onPress = {() => router.push('/Login')}
+              />
           ),
           headerTitle: () => (
               <View style={{ alignItems: 'center', justifyContent: 'center'}}>
@@ -36,7 +42,6 @@ const Home = () => {
                 <Welcome/>
                 <CurrentDisasters />
                 <UserMap />
-                <Donations />
             </View>
         </ScrollView>
     </SafeAreaView>

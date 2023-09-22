@@ -2,43 +2,43 @@ import { View, Text, SafeAreaView, Image, Dimensions } from 'react-native';
 import React from 'react';
 import styles from './weatherinfo.style';
 
-const WeatherInfo = ({weatherData, weatherIcon}) => {
-    if(!weatherData || !weatherData.location || !weatherData.current){
+const WeatherInfo = ({ weatherData, weatherIcon }) => {
+    if (!weatherData || weatherData.length !== 3) {
         console.log('Data is missing or incomplete');
         return null;
     }
 
-    const{
-        location: {name},
-        current: {temp_c, humidity, condition },
-    } = weatherData;
+    const {
+        condition,
+    } = weatherData[0].day;
 
     const { icon } = condition;
 
-    console.log('After data extraction:');
-    console.log('name:', name);
-    console.log('temp_c:', temp_c);
+    const dayNames = ['Monday', 'Tuesday', 'Wednesday'];
 
     return (
         <SafeAreaView style={styles.container}>
-            <View style={{alignItems: 'center'}}>
-                {icon && (
-                    <Image
-                        style={styles.weatherIcon}
-                        source={{uri: `https:${icon}`}}
-                    />
-                )}
-                <Text style={styles.standardText}>{name}</Text>
-            </View>
-
-            <View style={styles.extraInfo}>
-                <View style={styles.info}>
-                    <Text style={styles.infoText}>Feels like: {temp_c} °C</Text>
-                    <Text style={styles.infoText}>Humidity: {humidity}%</Text>
-                </View>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                {weatherData.map((dayData, index) => (
+                    <View key={index} style={{ alignItems: 'center' }}>
+                        <Text style={styles.title}>{dayNames[index]}</Text>
+                            {icon && (
+                                <Image
+                                    style={styles.weatherIcon}
+                                    source={{uri: `https:${icon}`}}
+                                />
+                            )}
+                        <View style={styles.extraInfo}>
+                            <View style={styles.info}>
+                                <Text style={styles.infoText}>Max Temp: {dayData.day.maxtemp_c} °C</Text>
+                                <Text style={styles.infoText}>Min Temp: {dayData.day.mintemp_c} °C</Text>
+                            </View>
+                        </View>
+                    </View>
+                ))}
             </View>
         </SafeAreaView>
-    )
+    );
 }
 
 export default WeatherInfo;
