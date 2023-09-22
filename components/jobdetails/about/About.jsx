@@ -1,14 +1,14 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-import styles from './tabs.style'
+import styles from './about.style'
 
-const Tabs = () => {
+const About = () => {
   return (
     <View>
-      <Text>Tabs</Text>
+      <Text>About</Text>
     </View>
   )
 }
 
-export default Tabs
+export default About

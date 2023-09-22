@@ -4,14 +4,14 @@ import { FONT, SIZES, COLORS } from "../../../constants";
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SIZES.xLarge,
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    marginTop: SIZES.xLarge,
   },
   header: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
   },
   headerTitle: {
@@ -27,31 +27,6 @@ const styles = StyleSheet.create({
   cardsContainer: {
     marginTop: SIZES.medium,
   },
-  map: {
-    width: 325,
-    height: 325,
-    marginTop: SIZES.medium,
-    marginBottom: SIZES.small,
-    borderRadius: SIZES.xSmall,
-  },
-  mapMarker: {
-    width: 70,
-    height: 60,
-  },
-  getLocationBtn:{
-    marginTop: SIZES.small,
-    width: 110,
-    height: 35,
-    backgroundColor: COLORS.babyBlue,
-    borderRadius: SIZES.medium,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  getLocationText:{
-    fontSize: SIZES.medium,
-    fontFamily: FONT.regular,
-    color: COLORS.white,
-  }
 });
 
 export default styles;

@@ -1,9 +1,7 @@
 {
-  "expoServerNgrokUrl": "https://x8-pjx.anonymous.sprint1-safelink.exp.direct",
-  "packagerNgrokUrl": "https://x8-pjx.anonymous.sprint1-safelink.exp.direct",
-  "ngrokPid": 1140,
-  "expoServerPort": null,
+  "expoServerPort": 19000,
   "packagerPort": 19000,
-  "packagerPid": null,
-  "webpackServerPort": null
+  "expoServerNgrokUrl": "https://yz-d7u.anonymous.sprint1-safelink.exp.direct",
+  "packagerNgrokUrl": "https://yz-d7u.anonymous.sprint1-safelink.exp.direct",
+  "ngrokPid": 27420
 }
