@@ -40,14 +40,15 @@ const DonationsPage = () =>
         <TouchableOpacity
             style = { {flex: 1, margin: 10} }
             onPress = {() => openDonationLink(url)}>
-            <View style = {[styles.donationCard, {backgroundColor: COLORS.lightWhite}]}>
+            <View style = {[styles.donationCard, {backgroundColor: 'lightgrey'}]}>
                 <TouchableOpacity
                     style = {styles.logoContainer}
                     onPress = {() => openDonationLink(url)}>
                     <Image
                         source = {images.unicef}
                         resizeMode = "contain"
-                        style = {styles.logoImage}/>
+                        style = { {...styles.logoImage, borderRadius: 10, width: 70, height: 70} }
+                    />
                 </TouchableOpacity>
                 <View style = {styles.textContainer}>
                     <Text style = {styles.companyName} numberOfLines = {1}>
@@ -66,7 +67,7 @@ const DonationsPage = () =>
 
     //render donation cards
     const renderItem = ({item}) => (
-        <View style = { {flex: 1/3} }>
+        <View style = { {flex: 1, margin: 5} }>
             <DonationCard {...item} />
         </View>
     )
