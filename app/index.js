@@ -4,6 +4,7 @@ import { Stack, useRouter } from 'expo-router';
 import { COLORS, icons, images, SIZES } from '../constants';
 import { CurrentDisasters, ScreenHeaderBtn, Welcome } from '../components';
 import UserMap from "../components/home/usermap/UserMap";
+import TwitterFeed from "../components/home/twitterfeed/TwitterFeed";
 import SafeLink from '../assets/icons/logo.png';
 import { router } from 'expo-router';
 
@@ -40,8 +41,9 @@ const Home = () => {
         <ScrollView showsVerticalScrollIndicator={false}>
             <View style={{flex: 1, padding: SIZES.medium}}>
                 <Welcome/>
-                <CurrentDisasters />
-                <UserMap />
+                <CurrentDisasters/>
+                <TwitterFeed/>
+                <UserMap/>
             </View>
         </ScrollView>
     </SafeAreaView>

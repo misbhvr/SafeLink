@@ -7,15 +7,9 @@
     <list default="true" id="6ecd5147-8ffe-407c-8ebe-e6a836538306" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/cards/disaster/CurrentDisasterCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/cards/disaster/CurrentDisasterCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/cards/weatherinfo/WeatherInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/cards/weatherinfo/WeatherInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/cards/weatherinfo/weatherinfo.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/cards/weatherinfo/weatherinfo.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/common/header/ScreenHeaderBtn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/header/ScreenHeaderBtn.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/disasterdetails/donate/Donate.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/disasterdetails/donate/donate.style.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/donations/Donations.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/donations/donations.style.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,25 +43,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;jason&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Jason/PhpstormProjects/SafeLink/components/home/usermap&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Jason\\AppData\\Local\\Programs\\PhpStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "jason",
+    "last_opened_file_path": "C:/Users/Jason/PhpstormProjects/SafeLink/components/home/twitterfeed",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Console Font",
+    "ts.external.directory.path": "C:\\Users\\Jason\\AppData\\Local\\Programs\\PhpStorm\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Jason\PhpstormProjects\SafeLink\components\home\twitterfeed" />
       <recent name="C:\Users\Jason\PhpstormProjects\SafeLink\components\home\usermap" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -88,6 +83,10 @@
       <workItem from="1694601093505" duration="9307000" />
       <workItem from="1694677671418" duration="2794000" />
       <workItem from="1694928283459" duration="25790000" />
+      <workItem from="1695529237096" duration="251000" />
+      <workItem from="1695529963107" duration="46000" />
+      <workItem from="1697803015796" duration="21000" />
+      <workItem from="1697803045649" duration="3755000" />
     </task>
     <servers />
   </component>
@@ -96,5 +95,9 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
