@@ -20,16 +20,19 @@ const App = () => {
 
 const Home = () => {
     const navigation = useNavigation();
+
+    //Function to navigate to the 'Donate' screen
     const navigateToDonate = () => {
         navigation.navigate('Donate')
     }
 
+    //State variable and function to toggle the visibility of the menu modal
     const [showMenu, setShowMenu] = useState(false);
-
     const toggleMenu = () => {
         setShowMenu(!showMenu);
     }
 
+  //Modal to display the menu and the main screen  
   return (
     <SafeAreaView style = {{flex: 1, backgroundColor: COLORS.lightWhite}}>
       <Modal visible = {showMenu} animationType = "slide">
