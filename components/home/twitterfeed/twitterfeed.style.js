@@ -1,14 +1,12 @@
 import { StyleSheet } from "react-native";
 
 import { FONT, SIZES, COLORS } from "../../../constants";
+import Constants from "expo-constants";
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: SIZES.medium,
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    height: 300,
+    marginTop: SIZES.xxLarge,
+    height: 440,
     width: 620,
   },
   header: {
@@ -17,9 +15,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   headerTitle: {
+    marginTop: Constants.statusBarHeight,
     fontSize: SIZES.large,
     fontFamily: FONT.medium,
     color: COLORS.primary,
+    textAlign: "center",
   },
   headerBtn: {
     fontSize: SIZES.medium,

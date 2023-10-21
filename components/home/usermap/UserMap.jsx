@@ -37,6 +37,7 @@ const UserMap = () => {
 
     return (
     <View style={styles.container}>
+        <Text style={styles.headerTitle}>Your Map</Text>
         <MapView style={styles.map}
                  region={mapRegion}>
             <MapMarker coordinate={mapRegion} title='You'/>
