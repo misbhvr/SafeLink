@@ -5,6 +5,9 @@ import { COLORS, icons, images, SIZES } from '../constants';
 import { CurrentDisasters, ScreenHeaderBtn, Welcome } from '../components';
 import UserMap from "../components/home/usermap/UserMap";
 import SafeLink from '../assets/icons/logo.png';
+import close from '../assets/images/Close.png'
+import settings from '../assets/images/Settings.png'
+import aboutUs from '../assets/images/AboutUs.png'
 import { router } from 'expo-router';
 import { useNavigation } from 'expo-router';
 
@@ -34,62 +37,71 @@ const Home = () => {
 
   //Modal to display the menu and the main screen  
   return (
-    <SafeAreaView style = {{flex: 1, backgroundColor: COLORS.lightWhite}}>
-      <Modal visible = {showMenu} animationType = "slide">
-          <View style = { {flex: 1, backgroundColor: 'white'} }>
-              <View style = { {alignItems: 'flex-end', margin: 10} }>
-                  <Button title = "Close" onPress = {toggleMenu}/>
-              </View>
-              <TouchableOpacity style = { {padding: 10} } onPress={() => {}}>
-                  <Text style = {{fontSize: 16}}>Options</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style = { {padding:10} } onPress={() => {}}>
-                  <Text style = {{fontSize: 16}}>Profile</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style = { {padding: 10} } onPress={() => {}}>
-                  <Text style = {{fontSize: 16}}>Account Settings</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style = { {padding: 10} } onPress={() => {}}>
-                  <Text style = {{fontSize: 16}}>Log Out</Text>
-              </TouchableOpacity>
-          </View>
-      </Modal>
+      <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
+          <Modal
+              visible={showMenu}
+              animationType="fade"
+              transparent={true}
+              onRequestClose={toggleMenu}
+          >
+              <View style={{ position: 'absolute', top: 60, left: 0, backgroundColor: 'white', padding: 30, borderRadius: 10 }}>
 
-        <Stack.Screen options = {{ headerStyle : { backgroundColor: COLORS.lightWhite },
-          headerShadowVisible: false,
-          headerLeft: () => (
-              <ScreenHeaderBtn
-                  iconUrl = {icons.menu}
-                  dimension = "60%"
-                  onPress = {toggleMenu}
-              />
-            ),
-          headerRight: () => (
-              <ScreenHeaderBtn
-                  iconUrl = {images.profile}
-                  dimension = "100%"
-                  onPress = {() => router.push('/Login')}
-              />
-          ),
-          headerTitle: () => (
-              <View style={{ alignItems: 'center', justifyContent: 'center'}}>
-                  <Image
-                      source={SafeLink}
-                      style={{ width: 65, height: 40, resizeMode: 'contain'}}
+                  <View style = {{marginBottom: 20}}>
+                  <TouchableOpacity onPress={toggleMenu} style={{flexDirection: 'row', alignItems: 'center'}}>
+                      <Image source={close} style={{width: 24, height: 24, marginRight: 40}} />
+                      <Text style={{fontSize: 18}}>Close</Text>
+                  </TouchableOpacity>
+                  </View>
+
+                  <View style = {{marginBottom: 20}}>
+                  <TouchableOpacity onPress={() => { setShowMenu(false); navigation.navigate('Settings'); }} style={{flexDirection: 'row', alignItems: 'center'}}>
+                      <Image source={settings} style={{width: 24, height: 24, marginRight: 40}} />
+                      <Text style={{fontSize: 18}}>Settings</Text>
+                  </TouchableOpacity>
+                  </View>
+
+                  <TouchableOpacity onPress={() => { setShowMenu(false); navigation.navigate('AboutUs'); }} style={{flexDirection: 'row', alignItems: 'center'}}>
+                      <Image source={aboutUs} style={{width: 24, height: 24, marginRight: 40}} />
+                      <Text style={{fontSize: 18}}>About Us</Text>
+                  </TouchableOpacity>
+
+              </View>
+          </Modal>
+          <Stack.Screen options={{
+              headerStyle: { backgroundColor: COLORS.lightWhite },
+              headerShadowVisible: false,
+              headerLeft: () => (
+                  <ScreenHeaderBtn
+                      iconUrl={icons.menu}
+                      dimension="60%"
+                      onPress={toggleMenu}
                   />
-              </View>
-          ),
+              ),
+              headerRight: () => (
+                  <ScreenHeaderBtn
+                      iconUrl={images.profile}
+                      dimension="100%"
+                      onPress={() => router.push('/Login')}
+                  />
+              ),
+              headerTitle: () => (
+                  <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+                      <Image
+                          source={SafeLink}
+                          style={{ width: 65, height: 40, resizeMode: 'contain' }}
+                      />
+                  </View>
+              ),
           }}
-      />
-
-        <ScrollView showsVerticalScrollIndicator={false}>
-            <View style={{flex: 1, padding: SIZES.medium}}>
-                <Welcome/>
-                <CurrentDisasters />
-                <UserMap />
-            </View>
-        </ScrollView>
-    </SafeAreaView>
+          />
+          <ScrollView showsVerticalScrollIndicator={false}>
+              <View style={{ flex: 1, padding: SIZES.medium }}>
+                  <Welcome />
+                  <CurrentDisasters />
+                  <UserMap />
+              </View>
+          </ScrollView>
+      </SafeAreaView>
   )
 };
 

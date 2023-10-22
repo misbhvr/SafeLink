@@ -71,6 +71,16 @@ const styles = StyleSheet.create({
         color: COLORS.primary,
         marginBottom: SIZES.large,
     },
+    menuContainer: {
+        position: "absolute",
+        top: 0,
+        left: 0,
+        height: '25%',
+        width: '25%',
+        backgroundColor:'white',
+        zIndex: 1,
+        borderRadius:10,
+    },
 });
 
 export default styles;
