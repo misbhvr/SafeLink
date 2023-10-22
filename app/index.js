@@ -26,7 +26,10 @@ const Home = () => {
 
     //Function to navigate to the 'Donate' screen
     const navigateToDonate = () => {
-        navigation.navigate('Donate')
+        if (activeMenuType === 'Donations')
+        {
+            navigation.navigate('Donate')
+        }
     }
 
     //State variable and function to toggle the visibility of the menu modal

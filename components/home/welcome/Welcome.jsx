@@ -51,8 +51,11 @@ const Welcome = () => {
                         <TouchableOpacity
                             style={styles.tab(activeMenuType, item)}
                             onPress={() => {
+                                if (item === 'Donations')
+                                {
+                                    navigation.push('Donate');
+                                }
                                 setActiveMenuType(item);
-                                navigation.push('Donate');
                             }}
                         >
                             <Text style={styles.tabText(activeMenuType, item)}>{item}</Text>
