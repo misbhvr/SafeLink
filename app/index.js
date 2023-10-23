@@ -1,5 +1,5 @@
 import {View, Text, ScrollView, SafeAreaView, Image, Alert, Modal, TouchableOpacity, Button} from 'react-native';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Stack, useRouter } from 'expo-router';
 import { COLORS, icons, images, SIZES } from '../constants';
 import { CurrentDisasters, ScreenHeaderBtn, Welcome } from '../components';
@@ -8,6 +8,7 @@ import SafeLink from '../assets/icons/logo.png';
 import { router } from 'expo-router';
 import { useNavigation } from 'expo-router';
 import TwitterFeed from "../components/home/twitterfeed/TwitterFeed";
+import DonationsPage from "./Donate";
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
     return (
         <Stack.Navigator>
             <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Donate" component={DonationsPage}/>
         </Stack.Navigator>
     );
 };
@@ -24,7 +26,10 @@ const Home = () => {
 
     //Function to navigate to the 'Donate' screen
     const navigateToDonate = () => {
-        navigation.navigate('Donate')
+        if (activeMenuType === 'Donations')
+        {
+          navigation.navigate('Donate');
+        }
     }
 
     //State variable and function to toggle the visibility of the menu modal
