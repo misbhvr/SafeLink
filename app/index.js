@@ -1,4 +1,15 @@
-import {View, Text, ScrollView, SafeAreaView, Image, Alert, Modal, TouchableOpacity, Button} from 'react-native';
+import {
+    View,
+    Text,
+    ScrollView,
+    SafeAreaView,
+    Image,
+    Alert,
+    Modal,
+    TouchableOpacity,
+    Button,
+    Settings
+} from 'react-native';
 import { useState } from 'react';
 import { Stack, useRouter } from 'expo-router';
 import { COLORS, icons, images, SIZES } from '../constants';
@@ -10,6 +21,7 @@ import settings from '../assets/images/Settings.png'
 import aboutUs from '../assets/images/AboutUs.png'
 import { router } from 'expo-router';
 import { useNavigation } from 'expo-router';
+import LoginScreen from './Login'
 
 
 const App = () => {
@@ -17,6 +29,17 @@ const App = () => {
     return (
         <Stack.Navigator>
             <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen
+                name="Login"
+                component={LoginScreen}
+                options={{
+                    headerLeft: () => (
+                        <TouchableOpacity onPress={() => navigation.goBack()}>
+                            <Text>Go back</Text>
+                        </TouchableOpacity>
+                    )
+                }}
+            />
         </Stack.Navigator>
     );
 };
@@ -35,6 +58,11 @@ const Home = () => {
     //Function to navigate to the 'AboutUs' page
     const navigateToAboutUs = () => {
         navigation.navigate('AboutUs')
+    }
+
+    //Function to navigate to the 'Settings' screen
+    const navigateToSettings = () => {
+        navigation.navigate('Setting');
     }
 
     //State variable and function to toggle the visibility of the menu modal
@@ -62,7 +90,7 @@ const Home = () => {
                   </View>
 
                   <View style = {{marginBottom: 20}}>
-                  <TouchableOpacity onPress={() => { setShowMenu(false); navigation.navigate('Settings'); }} style={{flexDirection: 'row', alignItems: 'center'}}>
+                      <TouchableOpacity onPress={navigateToSettings} style={{flexDirection: 'row', alignItems: 'center'}}>
                       <Image source={settings} style={{width: 24, height: 24, marginRight: 40}} />
                       <Text style={{fontSize: 18}}>Settings</Text>
                   </TouchableOpacity>
@@ -102,6 +130,7 @@ const Home = () => {
               ),
           }}
           />
+
           <ScrollView showsVerticalScrollIndicator={false}>
               <View style={{ flex: 1, padding: SIZES.medium }}>
                   <Welcome />

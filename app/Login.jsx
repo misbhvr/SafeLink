@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { View, Text, TextInput, TouchableOpacity, Image, FlatList } from 'react-native'
 import { useRouter } from 'expo-router';
 import styles from './login.style'
 import { COLORS, icons, images, SIZES } from '../constants'
 import { router } from 'expo-router';
+import { useNavigation } from 'expo-router';
+import {ScreenHeaderBtn} from "../components";
+import { Alert} from "react-native";
 
 
 const LoginScreen = () => {
@@ -11,6 +14,12 @@ const LoginScreen = () => {
         email: '',
         password: ''
     });
+
+    const navigation = useNavigation();
+
+    const navigationToHome = () => {
+        navigation.navigate('index');
+    }
 
     return (
         <View style={styles.container}>
@@ -50,6 +59,10 @@ const LoginScreen = () => {
 
             <TouchableOpacity style={styles.pressBtn}>
                 <Text style={styles.userName}>Don't have an account?</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.pressBtn} onPress={() => router.goBack()}>
+                <Text style = {styles.userName}>Login</Text>
             </TouchableOpacity>
         </View>
     );
