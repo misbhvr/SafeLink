@@ -30,40 +30,54 @@ const DonationsPage = () =>
 
     //Sample data
     const data = [
-        {id: 1, text: 'Libya Flood Emergency', url: 'https://www.unicef.org.nz/appeals/libya-flood-emergency'},
-        {id: 2, text: 'Global Malnutrition Crisis', url: 'https://www.unicef.org.nz/appeals/the-greatest-need'},
-        {id: 3, text: 'Moroccan Earthquake', url: 'https://www.unicef.org.nz/appeals/global-malnutrition-crisis'},
+        {
+            id: 1,
+            text: 'Libya Flood Emergency',
+            url: 'https://www.unicef.org.nz/appeals/libya-flood-emergency',
+            description: 'Help provide emergency supplies to families affected by flooding in Libya'
+        },
+        {
+            id: 2,
+            text: 'Global Malnutrition Crisis',
+            url: 'https://www.unicef.org.nz/appeals/the-greatest-need',
+            description: 'Support Unicef\'s efforts to treat and prevent malnutrition around the world'
+        },
+        {
+            id: 3,
+            text: 'Moroccan Earthquake',
+            url: 'https://www.unicef.org.nz/appeals/global-malnutrition-crisis',
+            description: 'Bring relief to children impacted by the recent earthquake in Morocco'
+        },
     ];
 
     //Donation Card component
-    const DonationCard = ({url, text}) => (
+    const DonationCard = ({url, text, description}) => (
         <TouchableOpacity
             style = { {flex: 1, margin: 10} }
             onPress = {() => openDonationLink(url)}>
-            <View style = {[styles.donationCard, {backgroundColor: 'lightgrey'}]}>
-                <TouchableOpacity
-                    style = {styles.logoContainer}
-                    onPress = {() => openDonationLink(url)}>
+            <View style = {[styles.donationCard, {backgroundColor: 'lightgrey', alignItems: 'center'}]}>
+                <Text style={{fontFamily: 'DMBold', fontSize: 20}}>
+                    {text}
+                </Text>
+                <View style={{flexDirection: 'row'}}>
                     <Image
                         source = {images.unicef}
                         resizeMode = "contain"
-                        style = { {...styles.logoImage, borderRadius: 10, width: 70, height: 70} }
+                        style = { {...styles.logoImage, borderRadius: 5, width: 100, height: 100} }
                     />
-                </TouchableOpacity>
-                <View style = {styles.jobName}>
-                    <Text style = {styles.companyName} numberOfLines = {1}>
-                        Unicef
-                    </Text>
-                    <Text style = {styles.jobName} numberOfLines = {1}>
-                        {text}
-                    </Text>
-                    <Text style = {styles.jobName}>
-                        learn more
-                    </Text>
+                    <View style = {{flex: 1, marginLeft: 10}}>
+                        <Text style = {styles.jobName}>
+                            learn more
+                        </Text>
+                        <Text style = {styles.descriptionText}>
+                            {description}
+                        </Text>
+                    </View>
                 </View>
             </View>
         </TouchableOpacity>
-    );
+    )
+
 
     //render donation cards
     const renderItem = ({item}) => (

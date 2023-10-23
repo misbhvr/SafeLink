@@ -22,9 +22,10 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         justifyContent: "center",
         padding: SIZES.small,
-        marginVertical: SIZES.small,
+        marginVertical: SIZES.medium,
         shadowColor: "#000",
         shadowOffset: { width: 0, height: 2 },
+
     },
     container: {
         flex: 1,
@@ -89,6 +90,20 @@ const styles = StyleSheet.create({
         fontSize: SIZES.medium,
         color: COLORS.primary,
         marginBottom: SIZES.large,
+    },
+    logoContainer: (selectedJob, item) => ({
+        width: 50,
+        height: 50,
+        backgroundColor: selectedJob === item.job_id ? "#FFF" : COLORS.white,
+        borderRadius: SIZES.medium,
+        justifyContent: "center",
+        alignItems: "center",
+    }),
+    descriptionText: {
+        fontSize: SIZES.medium - 2,
+        color: COLORS.gray,
+        fontFamily: FONT.regular,
+        marginTop: SIZES.small / 2
     },
 });
 
