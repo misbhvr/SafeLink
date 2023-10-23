@@ -13,15 +13,16 @@ import { useNavigation } from 'expo-router';
 import TwitterFeed from "../components/home/twitterfeed/TwitterFeed";
 import DonationsPage from "./Donate";
 import FullMap from "./FullMap";
+import LoginScreen from "./Login";
 
 
 const App = () => {
-    const router = useRouter();
     return (
         <Stack.Navigator>
             <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="Donate" component={DonationsPage}/>
             <Stack.Screen name="FullMap" component={FullMap}/>
+            <Stack.Screen name="Login" component={LoginScreen}/>
         </Stack.Navigator>
     );
 };
@@ -35,6 +36,10 @@ const Home = () => {
 
     const navigateToSettings = () => {
         navigation.navigate('Setting');
+    }
+
+    const navigateToProfile = () => {
+        navigation.navigate('Login');
     }
 
     //State variable and function to toggle the visibility of the menu modal
@@ -88,7 +93,7 @@ const Home = () => {
                     <ScreenHeaderBtn
                         iconUrl = {images.profile}
                         dimension = "100%"
-                        onPress = {() => router.push('/Login')}
+                        onPress = {navigateToProfile}
                     />
                 ),
                 headerTitle: () => (

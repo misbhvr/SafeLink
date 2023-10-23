@@ -22,7 +22,12 @@ function TwitterFeed(props){
 
         const source = `<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script><blockquote class="twitter-tweet"><a href="${item.url}"></a></blockquote>`;
         return(
-            <WebView style={styles.container} source={{html: source}}/>
+            <WebView
+                style={styles.container}
+                source={{html: source}}
+                bounces={false}
+                scrollEnabled={true}
+            />
         )
     }
 

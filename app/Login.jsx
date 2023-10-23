@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { View, Text, TextInput, TouchableOpacity, Image, FlatList } from 'react-native'
-import { useRouter } from 'expo-router';
+
 import styles from './login.style'
 import { COLORS, icons, images, SIZES } from '../constants'
-import { router } from 'expo-router';
+import { useNavigation } from "expo-router";
 
 
 const LoginScreen = () => {
@@ -11,6 +11,8 @@ const LoginScreen = () => {
         email: '',
         password: ''
     })
+
+    const navigation = useNavigation();
 
     return (
         <View style={styles.container}>

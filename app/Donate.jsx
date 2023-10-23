@@ -8,9 +8,6 @@ import { useNavigation } from "expo-router";
 
 const DonationsPage = () =>
 {
-    const router = useRouter();
-    const isLoading = false;
-    const error = false;
     const navigation = useNavigation();
 
     const openDonationLink = (url) =>
@@ -84,7 +81,7 @@ const DonationsPage = () =>
                     headerRight: () => (
                         <ScreenHeaderBtn
                             iconUrl = {icons.share}
-                            dimension = {"100%"}/>
+                            dimension = {"70%"}/>
                     ),
                     headerTitle: ''
                 }} />
