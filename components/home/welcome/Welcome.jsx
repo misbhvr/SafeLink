@@ -13,10 +13,6 @@ const Welcome = () => {
     const [activeMenuType, setActiveMenuType] = useState('Current Disasters')
     const navigation = useNavigation();
 
-    const navigateToDonate = () => {
-        navigate('/Donate');
-    }
-
   return (
     <View>
       <View style={styles.container}>
