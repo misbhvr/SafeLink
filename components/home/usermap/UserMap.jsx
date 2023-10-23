@@ -36,15 +36,16 @@ const UserMap = () => {
     }, [])
 
     return (
-    <View style={styles.container}>
-        <MapView style={styles.map}
-                 region={mapRegion}>
-            <MapMarker coordinate={mapRegion} title='You'/>
-        </MapView>
-    <TouchableOpacity style={styles.getLocationBtn} onPress={userLocation}>
-        <Text style={styles.getLocationText}>Get Location</Text>
-    </TouchableOpacity>
-    </View>
+        <View style={styles.container}>
+            <Text style={styles.headerTitle}>Your Map</Text>
+            <MapView style={styles.map}
+                     region={mapRegion}>
+                <MapMarker coordinate={mapRegion} title='You'/>
+            </MapView>
+            <TouchableOpacity style={styles.getLocationBtn} onPress={userLocation}>
+                <Text style={styles.getLocationText}>Get Location</Text>
+            </TouchableOpacity>
+        </View>
     );
 };
 

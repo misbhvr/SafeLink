@@ -7,38 +7,37 @@ import styles from './currentdisastercard.style'
 import WeatherInfo from '../weatherinfo/WeatherInfo'
 import { COLORS, FONT, SHADOWS, SIZES } from "../../../../constants"
 
-const API_KEYS = {
-    consumer_key: 'YOUR_CONSUMER_KEY',
-    consumer_secret: 'YOUR_CONSUMER_SECRET',
-    access_token_key:'YOUR_ACCESS_TOKEN',
-    access_token_secret: 'YOUR_ACCESS_TOKEN_SECRET',
-}
+const API_KEYS = '331b6e8678msh3b731d62673ee04p1f210bjsnb5751ec11821'
 
 const CurrentDisasterCard = () => {
     const [weatherData, setWeatherData] = useState(null);
     const [loaded, setLoaded] = useState(false);
 
-    const fetchTwitterData = async () => {
+    const fetchWeatherData = async (cityName) => {
         const options = {
             method: 'GET',
-            url: 'https://api.twitter.com/1.1/search/tweets.json',
-            params: {q: 'disaster OR emergency OR crisis OR hazard OR Auckland OR Wellington OR Christchurch', geocode: '-40.900557,174.885971,3000km', count: '3'},
-            auth: {
-                consumer_key: API_KEYS.consumer_key,
-                consumer_secret: API_KEYS.consumer_secret,
-                token: API_KEYS.access_token_key,
-                token_secret: API_KEYS.access_token_secret
+            url: `https://weatherapi-com.p.rapidapi.com/forecast.json`,
+            params: {q: cityName, days: '3'},
+            headers: {
+                'X-RapidAPI-Key': API_KEYS,
+                'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
             }
         };
 
         try {
+            await waitBeforeRequest(1000);
             const response = await axios.request(options);
             if(response.status === 200){
-                const { statuses } = response.data;
-                if (statuses && statuses.length >= 3) {
-                    setTwitterData(statuses);
+                const { forecast } = response.data;
+                if (forecast && forecast.forecastday && forecast.forecastday.length >= 3) {
+                    const nextThreeDays = forecast.forecastday.slice(0, 3);
+                    setWeatherData(nextThreeDays);
                 }
             }
+            else{
+                setWeatherData(null)
+            }
+            setLoaded(true)
         } catch (error) {
             Alert.alert('Error', error.message)
         }
@@ -51,7 +50,7 @@ const CurrentDisasterCard = () => {
     }
 
     useEffect(() => {
-        fetchTwitterData('Auckland');
+        fetchWeatherData('Auckland');
     }, []);
 
     if(!loaded){
@@ -67,7 +66,7 @@ const CurrentDisasterCard = () => {
             <View style={styles.header}>
                 <Text style={styles.headerTitle}>Current Disaster</Text>
             </View>
-            <WeatherInfo twitterData = {twitterData}/>
+            <WeatherInfo weatherData={weatherData}/>
         </View>
     )
 }

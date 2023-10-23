@@ -13,34 +13,34 @@ const CurrentDisasters = () => {
     const isLoading = false;
     const error = false;
 
-  return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-          <Text style={styles.headerTitle}>Current Disasters Near You</Text>
-          <TouchableOpacity>
-              <Text style={styles.headerBtn}>Show all</Text>
-          </TouchableOpacity>
-      </View>
+    return (
+        <View style={styles.container}>
+            <View style={styles.header}>
+                <Text style={styles.headerTitle}>Current Weather</Text>
+                <TouchableOpacity>
+                    <Text style={styles.headerBtn}>Show all</Text>
+                </TouchableOpacity>
+            </View>
 
-        <View style={styles.cardsContainer}>
-            {isLoading ? (
-                <ActivityIndicator size='large' color={COLORS.primary} />
-            ) : error ? (
-                <Text>Something went wrong</Text>
-            ) : (
-                <FlatList
-                    data={[1,2,3]}
-                    renderItem={({item}) => (
-                        <CurrentDisasterCard item={item}/>
-                    )}
-                    keyExtractor={item => item.toString()}
-                    contentContainerStyle={{ columnGap: SIZES.medium}}
-                    horizontal
-                />
-            )}
+            <View style={styles.cardsContainer}>
+                {isLoading ? (
+                    <ActivityIndicator size='large' color={COLORS.primary} />
+                ) : error ? (
+                    <Text>Something went wrong</Text>
+                ) : (
+                    <FlatList
+                        data={[1,2,3]}
+                        renderItem={({item}) => (
+                            <CurrentDisasterCard item={item}/>
+                        )}
+                        keyExtractor={item => item?.job_id}
+                        contentContainerStyle={{ columnGap: SIZES.medium}}
+                        horizontal
+                    />
+                )}
+            </View>
         </View>
-    </View>
-  )
+    )
 }
 
 export default CurrentDisasters
