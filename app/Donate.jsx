@@ -87,11 +87,6 @@ const DonationsPage = () =>
                             onPress = {() => navigation.goBack()}
                         />
                     ),
-                    headerRight: () => (
-                        <ScreenHeaderBtn
-                            iconUrl = {icons.share}
-                            dimension = {"100%"}/>
-                    ),
                     headerTitle: ''
                 }} />
 

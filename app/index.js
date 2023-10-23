@@ -32,6 +32,11 @@ const Home = () => {
         }
     }
 
+    //Function to navigate to the 'AboutUs' page
+    const navigateToAboutUs = () => {
+        navigation.navigate('AboutUs')
+    }
+
     //State variable and function to toggle the visibility of the menu modal
     const [showMenu, setShowMenu] = useState(false);
     const toggleMenu = () => {
@@ -63,7 +68,7 @@ const Home = () => {
                   </TouchableOpacity>
                   </View>
 
-                  <TouchableOpacity onPress={() => { setShowMenu(false); navigation.navigate('AboutUs'); }} style={{flexDirection: 'row', alignItems: 'center'}}>
+                  <TouchableOpacity onPress={navigateToAboutUs} style={{flexDirection: 'row', alignItems: 'center'}}>
                       <Image source={aboutUs} style={{width: 24, height: 24, marginRight: 40}} />
                       <Text style={{fontSize: 18}}>About Us</Text>
                   </TouchableOpacity>
