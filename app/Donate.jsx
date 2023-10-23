@@ -50,14 +50,14 @@ const DonationsPage = () =>
                         style = { {...styles.logoImage, borderRadius: 10, width: 70, height: 70} }
                     />
                 </TouchableOpacity>
-                <View style = {styles.textContainer}>
+                <View style = {styles.jobName}>
                     <Text style = {styles.companyName} numberOfLines = {1}>
                         Unicef
                     </Text>
                     <Text style = {styles.jobName} numberOfLines = {1}>
                         {text}
                     </Text>
-                    <Text style = {styles.jobType}>
+                    <Text style = {styles.jobName}>
                         learn more
                     </Text>
                 </View>
