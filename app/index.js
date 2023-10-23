@@ -5,6 +5,9 @@ import { COLORS, icons, images, SIZES } from '../constants';
 import { CurrentDisasters, ScreenHeaderBtn, Welcome } from '../components';
 import UserMap from "../components/home/usermap/UserMap";
 import SafeLink from '../assets/icons/logo.png';
+import aboutUs from '../assets/images/AboutUs.png'
+import close from '../assets/images/Close.png'
+import settings from '../assets/images/Settings.png'
 import { router } from 'expo-router';
 import { useNavigation } from 'expo-router';
 import TwitterFeed from "../components/home/twitterfeed/TwitterFeed";
@@ -26,12 +29,12 @@ const App = () => {
 const Home = () => {
     const navigation = useNavigation();
 
-    //Function to navigate to the 'Donate' screen
-    const navigateToDonate = () => {
-        if (activeMenuType === 'Donations')
-        {
-          navigation.navigate('Donate');
-        }
+    const navigateToAboutUs = () => {
+        navigation.navigate('AboutUs')
+    }
+
+    const navigateToSettings = () => {
+        navigation.navigate('Setting');
     }
 
     //State variable and function to toggle the visibility of the menu modal
@@ -40,26 +43,35 @@ const Home = () => {
         setShowMenu(!showMenu);
     }
 
-    //Modal to display the menu and the main screen
     return (
         <SafeAreaView style = {{flex: 1, backgroundColor: COLORS.lightWhite}}>
-            <Modal visible = {showMenu} animationType = "slide">
-                <View style = { {flex: 1, backgroundColor: 'white'} }>
-                    <View style = { {alignItems: 'flex-end', margin: 10} }>
-                        <Button title = "Close" onPress = {toggleMenu}/>
+            <Modal
+                visible={showMenu}
+                animationType="fade"
+                transparent={true}
+                onRequestClose={toggleMenu}
+            >
+                <View style={{ position: 'absolute', top: 50, left: 0, backgroundColor: COLORS.lightWhite, padding: 20, borderRadius: 10, borderColor: 'grey' }}>
+
+                    <View style = {{marginBottom: 20}}>
+                        <TouchableOpacity onPress={toggleMenu} style={{flexDirection: 'row', alignItems: 'center'}}>
+                            <Image source={close} style={{width: 18, height: 18, marginRight: 10}} />
+                            <Text style={{fontSize: 18}}>Close</Text>
+                        </TouchableOpacity>
                     </View>
-                    <TouchableOpacity style = { {padding: 10} } onPress={() => {}}>
-                        <Text style = {{fontSize: 16}}>Options</Text>
+
+                    <View style = {{marginBottom: 20}}>
+                        <TouchableOpacity onPress={navigateToSettings} style={{flexDirection: 'row', alignItems: 'center'}}>
+                            <Image source={settings} style={{width: 18, height: 18, marginRight: 10}} />
+                            <Text style={{fontSize: 18}}>Settings</Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    <TouchableOpacity onPress={navigateToAboutUs} style={{flexDirection: 'row', alignItems: 'center'}}>
+                        <Image source={aboutUs} style={{width: 18, height: 18, marginRight: 10}} />
+                        <Text style={{fontSize: 18}}>About Us</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style = { {padding:10} } onPress={() => {}}>
-                        <Text style = {{fontSize: 16}}>Profile</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style = { {padding: 10} } onPress={() => {}}>
-                        <Text style = {{fontSize: 16}}>Account Settings</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style = { {padding: 10} } onPress={() => {}}>
-                        <Text style = {{fontSize: 16}}>Log Out</Text>
-                    </TouchableOpacity>
+
                 </View>
             </Modal>
 
