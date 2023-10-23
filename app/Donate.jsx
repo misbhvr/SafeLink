@@ -13,10 +13,6 @@ const DonationsPage = () =>
     const error = false;
     const navigation = useNavigation();
 
-    const navigateToDonate = () => {
-        navigation.navigate('Donate');
-    }
-
     const openDonationLink = (url) =>
     {
         if(url)

@@ -63,9 +63,6 @@ const CurrentDisasterCard = () => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-                <Text style={styles.headerTitle}>Current Disaster</Text>
-            </View>
             <WeatherInfo weatherData={weatherData}/>
         </View>
     )

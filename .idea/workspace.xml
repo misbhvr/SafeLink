@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ecd5147-8ffe-407c-8ebe-e6a836538306" name="Changes" comment="" />
+    <list default="true" id="6ecd5147-8ffe-407c-8ebe-e6a836538306" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Donate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/Donate.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/FullMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/FullMap.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/fullmap.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/fullmap.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/common/cards/disaster/CurrentDisasterCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/common/cards/disaster/CurrentDisasterCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/disasterdetails/disasterinfo/DisasterInfo.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/disasterdetails/disasterinfo/disasterinfo.style.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/current/CurrentDisasters.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/current/CurrentDisasters.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/home/welcome/Welcome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/welcome/Welcome.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +43,13 @@
     &quot;assignee&quot;: &quot;misbhvr&quot;
   }
 }</component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -107,6 +127,7 @@
       <workItem from="1697803045649" duration="4027000" />
       <workItem from="1697855934240" duration="3318000" />
       <workItem from="1697945439651" duration="552000" />
+      <workItem from="1698061641975" duration="3461000" />
     </task>
     <servers />
   </component>

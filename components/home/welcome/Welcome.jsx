@@ -5,17 +5,13 @@ import { useRouter, Stack, useNavigation } from 'expo-router';
 import styles from './welcome.style'
 import { icons, SIZES, COLORS } from "../../../constants";
 
-const menuBar = ["Current Disasters", "Disaster Map", "Donations"];
+const menuBar = ["Current Weather", "Disaster Map", "Donations"];
 
 const Welcome = () => {
   const router = useRouter();
   const [searchText, setSearchText] = useState('')
-  const [activeMenuType, setActiveMenuType] = useState('Current Disasters')
+  const [activeMenuType, setActiveMenuType] = useState('Current Weather')
   const navigation = useNavigation();
-
-  const navigateToDonate = () => {
-    navigate('/Donate');
-  }
 
   return (
     <View>
@@ -54,6 +50,10 @@ const Welcome = () => {
                   if (item === 'Donations')
                   {
                     navigation.push('Donate');
+                  }
+                  if(item === 'Disaster Map')
+                  {
+                    navigation.push('FullMap');
                   }
                   setActiveMenuType(item);
                 }}

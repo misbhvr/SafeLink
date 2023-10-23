@@ -9,6 +9,7 @@ import { router } from 'expo-router';
 import { useNavigation } from 'expo-router';
 import TwitterFeed from "../components/home/twitterfeed/TwitterFeed";
 import DonationsPage from "./Donate";
+import FullMap from "./FullMap";
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
         <Stack.Navigator>
             <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="Donate" component={DonationsPage}/>
+            <Stack.Screen name="FullMap" component={FullMap}/>
         </Stack.Navigator>
     );
 };
