@@ -1,11 +1,7 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, TouchableOpacity, Alert} from "react-native";
-import {Stack, useRouter} from 'expo-router';
-import {COLORS, icons, SIZES, images} from '../constants'
-import {ScreenHeaderBtn} from "../components";
 import styles from "./donate.style"
 import { useNavigation } from "expo-router";
-import group from "../assets/images/SafeLink.jpg"
 
 const SettingsPage = () => {
     const navigation = useNavigation();
@@ -20,7 +16,7 @@ const SettingsPage = () => {
         navigation.navigate('Login')
     }
 
-    //Function to show alert dialog and navigate to the 'login' screen
+    //Function to show alert dialog and navigate to the home screen
     const logout = () => {
         Alert.alert(
             'Logout',
@@ -37,9 +33,51 @@ const SettingsPage = () => {
         )
     }
 
+    //Function to show alert dialog and navigate to the edit username screen
+    const editName = () => {
+        Alert.alert(
+            'Edit Username',
+            'Are you sure you?',
+            [
+                {text: 'No', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'Yes', onPress: () => {
+                        navigation.reset({
+                            index: 0,
+                            routes: [{name: 'index'}],
+                        });
+                    }},
+            ]
+        )
+    }
+
+    //Function to show alert dialog and navigate to the edit password screen
+    const editPassword = () => {
+        Alert.alert(
+            'Edit Password',
+            'Are you sure you?',
+            [
+                {text: 'No', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'Yes', onPress: () => {
+                        navigation.reset({
+                            index: 0,
+                            routes: [{name: 'index'}],
+                        });
+                    }},
+            ]
+        )
+    }
+
 
     return (
         <View style = { {alignItems: 'center'} }>
+            <TouchableOpacity onPress={editName} style = {styles.pressBtn}>
+            <Text style={styles.userName}>Edit Username</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity onPress={editPassword} style = {styles.pressBtn}>
+                <Text style={styles.userName}>Edit Password</Text>
+            </TouchableOpacity>
+
             <TouchableOpacity onPress={logout} style = {styles.pressBtn}>
                 <Text style = {styles.userName}>Logout</Text>
             </TouchableOpacity>
