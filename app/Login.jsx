@@ -17,7 +17,7 @@ const Login = ({navigation}) => {
     const onLogin = async (email, password) => {
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            console.log('Firebase login successful!', email, password);
+            console.log('Login successful!', email, password);
             router.push('/Index');
         } catch (error) {
             Alert.alert(error.message);

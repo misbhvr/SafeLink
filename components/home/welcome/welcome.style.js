@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-
 import { COLORS, FONT, SIZES } from "../../../constants";
 
 const styles = StyleSheet.create({
@@ -18,9 +17,8 @@ const styles = StyleSheet.create({
     marginTop: 2,
   },
   searchContainer: {
-    justifyContent: "center",
-    alignItems: "center",
     flexDirection: "row",
+    alignItems: "center",
     marginTop: SIZES.large,
     height: 50,
   },
@@ -29,7 +27,6 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white,
     marginRight: SIZES.small,
     justifyContent: "center",
-    alignItems: "center",
     borderRadius: SIZES.medium,
     height: "100%",
   },
@@ -52,16 +49,25 @@ const styles = StyleSheet.create({
     height: "50%",
     tintColor: COLORS.lightWhite,
   },
+  searchResultsContainer: {
+    backgroundColor: COLORS.lightGray, // Define your search results container style
+  },
+  searchResultItem: {
+    padding: SIZES.medium,
+    borderBottomWidth: 1,
+    borderBottomColor: COLORS.gray,
+  },
   tabsContainer: {
     width: "100%",
     marginTop: SIZES.medium,
   },
-  tab:{
+  tab: {
     paddingVertical: SIZES.small / 2,
     paddingHorizontal: SIZES.small,
     borderRadius: SIZES.medium,
     borderWidth: 1,
-    borderColor: "black",
+    borderColor: COLORS.black,
+    margin: 5,
   },
   tabText: (activeJobType, item) => ({
     fontFamily: FONT.medium,

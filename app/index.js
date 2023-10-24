@@ -14,6 +14,7 @@ import TwitterFeed from "../components/home/twitterfeed/TwitterFeed";
 import DonationsPage from "./Donate";
 import FullMap from "./FullMap";
 import LoginScreen from "./Login";
+import SettingsPage from "./Setting";
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
             <Stack.Screen name="Donate" component={DonationsPage}/>
             <Stack.Screen name="FullMap" component={FullMap}/>
             <Stack.Screen name="Login" component={LoginScreen}/>
+            <Stack.Screen name="Setting" component={SettingsPage}/>
         </Stack.Navigator>
     );
 };

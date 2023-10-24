@@ -1,15 +1,29 @@
-import { useState } from 'react'
-import { View, Text, TextInput, TouchableOpacity, Image, FlatList } from 'react-native'
-import { useRouter, Stack, useNavigation } from 'expo-router';
-import styles from './welcome.style'
-import { icons, SIZES, COLORS } from "../../../constants";
+import { useState } from 'react';
+import { View, Text, TextInput, TouchableOpacity, Image, FlatList, Alert } from 'react-native';
+import { useNavigation } from 'expo-router';
+import styles from './welcome.style';
+import { icons, SIZES, COLORS } from '../../../constants';
+import { search } from '../searchFunction/searchFunction';
 
-const menuBar = ["Current Disasters", "Disaster Map", "Donations"];
+const menuBar = ['Disaster Map', 'Donations'];
+
 const Welcome = () => {
-    const router = useRouter();
-    const [searchText, setSearchText] = useState('')
-    const [activeMenuType, setActiveMenuType] = useState('Current Weather')
     const navigation = useNavigation();
+    const [searchQuery, setSearchQuery] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
+
+    const handleSearch = () => {
+        if (searchQuery.trim() === '') {
+            Alert.alert('Please enter a search query.');
+        } else {
+            const results = search(searchQuery);
+            setSearchResults(results);
+
+            if (results.length === 1) {
+                navigation.navigate(results[0]);
+            }
+        }
+    };
 
     return (
         <View>
@@ -22,49 +36,60 @@ const Welcome = () => {
                 <View style={styles.searchWrapper}>
                     <TextInput
                         style={styles.searchInput}
-                        placeholder = "What are you looking for?"
+                        placeholder="What are you looking for?"
                         placeholderTextColor={COLORS.gray2}
-                        value=''
-                        onChangeText={(text) => setSearchText(text)}
+                        value={searchQuery}
+                        onChangeText={(text) => setSearchQuery(text)}
                     />
                 </View>
 
-                <TouchableOpacity style = {styles.searchBtn} onPress={() => {}}>
-                    <Image
-                        source={icons.search}
-                        resizeMode="contain"
-                        style={styles.searchBtnImage}
-                    />
+                <TouchableOpacity style={styles.searchBtn} onPress={handleSearch}>
+                    <Image source={icons.search} resizeMode="contain" style={styles.searchBtnImage} />
                 </TouchableOpacity>
             </View>
-            <View>
-                <View style={styles.tabsContainer}>
+
+            {searchResults.length > 0 && (
+                <View style={styles.searchResultsContainer}>
                     <FlatList
-                        data={menuBar}
+                        data={searchResults}
                         renderItem={({ item }) => (
                             <TouchableOpacity
-                                style={styles.tab}
-                                onPress={() => {
-                                    if (item === 'Donations') {
-                                        navigation.push('Donate');
-                                    }
-                                    if (item === 'Disaster Map') {
-                                        navigation.push('FullMap');
-                                    }
-                                    setActiveMenuType(item);
-                                }}
+                                style={styles.searchResultItem}
+                                onPress={() => navigation.navigate(item)}
                             >
-                                <Text style={styles.tabText}>{item}</Text>
+                                <Text>{item}</Text>
                             </TouchableOpacity>
                         )}
-                        keyExtractor={item => item}
-                        contentContainerStyle={{ columnGap: SIZES.small }}
-                        horizontal
+                        keyExtractor={(item) => item}
                     />
                 </View>
+            )}
+
+            <View style={styles.tabsContainer}>
+                <FlatList
+                    data={menuBar}
+                    renderItem={({ item }) => (
+                        <TouchableOpacity
+                            style={styles.tab}
+                            onPress={() => {
+                                if (item === 'Donations') {
+                                    navigation.navigate('Donate');
+                                }
+                                if (item === 'Disaster Map') {
+                                    navigation.navigate('FullMap');
+                                }
+                            }}
+                        >
+                            <Text style={styles.tabText}>{item}</Text>
+                        </TouchableOpacity>
+                    )}
+                    keyExtractor={(item) => item}
+                    contentContainerStyle={{ columnGap: SIZES.small }}
+                    horizontal
+                />
             </View>
         </View>
-    )
-}
+    );
+};
 
-export default Welcome
+export default Welcome;
