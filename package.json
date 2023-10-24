@@ -11,6 +11,7 @@
   "dependencies": {
     "@expo/ngrok": "^4.1.0",
     "@react-native-async-storage/async-storage": "^1.19.3",
+    "@testing-library/react-native": "^12.3.0",
     "axios": "^1.5.0",
     "email-validator": "^2.0.4",
     "expo": "^49.0.3",
