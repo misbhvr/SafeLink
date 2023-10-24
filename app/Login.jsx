@@ -1,24 +1,28 @@
 import { View, Text, TextInput, StyleSheet, Pressable, TouchableOpacity, Alert,Image } from 'react-native'
 import React, { useState } from 'react'
-import { Stack, useRouter } from 'expo-router';
+import {useNavigation} from 'expo-router';
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 import { auth } from './firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import styles from "./login.style"
+import Home from "./index";
 
-const Login = ({navigation}) => {
-    const router = useRouter();
+
+
+const Login = () => {
     const loginFormSchema = Yup.object().shape({
         email: Yup.string().email().required('An email is required'),
         password: Yup.string().required().min(8, 'Password must contain at least 8 characters')
     })
 
+
+    const navigation = useNavigation();
     const onLogin = async (email, password) => {
         try {
             await signInWithEmailAndPassword(auth, email, password);
             console.log('Login successful!', email, password);
-            router.push('/Index');
+            navigation.navigate('index');
         } catch (error) {
             Alert.alert(error.message);
         }

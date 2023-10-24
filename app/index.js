@@ -7,8 +7,7 @@ import UserMap from "../components/home/usermap/UserMap";
 import SafeLink from '../assets/icons/logo.png';
 import aboutUs from '../assets/images/AboutUs.png'
 import close from '../assets/images/Close.png'
-import settings from '../assets/images/Settings.png'
-import { router } from 'expo-router';
+import logoutIcon from '../assets/icons/logout.png'
 import { useNavigation } from 'expo-router';
 import TwitterFeed from "../components/home/twitterfeed/TwitterFeed";
 import DonationsPage from "./Donate";
@@ -50,6 +49,19 @@ const Home = () => {
         setShowMenu(!showMenu);
     }
 
+    const logout = () => {
+        Alert.alert(
+            'Logout',
+            'Are you sure you want to logout?',
+            [
+                {text: 'No', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'Yes', onPress: () => {
+                        navigation.navigate('index');
+                    }},
+            ]
+        )
+    }
+
     return (
         <SafeAreaView style = {{flex: 1, backgroundColor: COLORS.lightWhite}}>
             <Modal
@@ -68,9 +80,9 @@ const Home = () => {
                     </View>
 
                     <View style = {{marginBottom: 20}}>
-                        <TouchableOpacity onPress={navigateToSettings} style={{flexDirection: 'row', alignItems: 'center'}}>
-                            <Image source={settings} style={{width: 18, height: 18, marginRight: 10}} />
-                            <Text style={{fontSize: 18}}>Settings</Text>
+                        <TouchableOpacity onPress={logout}style={{flexDirection: 'row', alignItems: 'center'}}>
+                            <Image source={logoutIcon} style={{width: 18, height: 18, marginRight: 10}} />
+                            <Text style={{fontSize: 18}}>Logout</Text>
                         </TouchableOpacity>
                     </View>
 

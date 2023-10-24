@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         justifyContent: "flex-start",
         alignItems: "center",
-        paddingTop: 80,
+        paddingTop: 40,
     },
     logo:{
         width: 250,

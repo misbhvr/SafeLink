@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         justifyContent: "flex-start",
         alignItems: "center",
-        paddingTop: 80,
+        paddingTop: 40,
     },
     logo:{
         width: 250,
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 20,
         marginHorizontal: 10,
-        fontStyle: FONT.regular,
+        fontStyle: "normal",
     },
     standardText: {
         color: 'black',

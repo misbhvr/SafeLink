@@ -34,7 +34,7 @@ const SignUp = ({navigation}) => {
                 onSubmit={values => {
                     onSignUp(values.email, values.password);
                     console.log(values, "Successfully signed up!")
-                    router.push('/Index')
+                    router.push('/Login')
                 }}
                 validationSchema={SignupFormSchema}
                 validateOnMount={true}
