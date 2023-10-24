@@ -22,6 +22,7 @@ import aboutUs from '../assets/images/AboutUs.png'
 import { router } from 'expo-router';
 import { useNavigation } from 'expo-router';
 import LoginScreen from './Login'
+import logoutIcon from '../assets/icons/logout.png';
 
 
 const App = () => {
@@ -71,6 +72,22 @@ const Home = () => {
         setShowMenu(!showMenu);
     }
 
+    const logout = () => {
+        Alert.alert(
+            'Logout',
+            'Are you sure you want to logout?',
+            [
+                {text: 'No', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+                {text: 'Yes', onPress: () => {
+                        navigation.reset({
+                            index: 0,
+                            routes: [{name: 'index'}],
+                        });
+                    }},
+            ]
+        )
+    }
+
     //Modal to display the menu and the main screen
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -90,9 +107,9 @@ const Home = () => {
                     </View>
 
                     <View style = {{marginBottom: 20}}>
-                        <TouchableOpacity onPress={navigateToSettings} style={{flexDirection: 'row', alignItems: 'center'}}>
-                            <Image source={settings} style={{width: 24, height: 24, marginRight: 40}} />
-                            <Text style={{fontSize: 18}}>Settings</Text>
+                        <TouchableOpacity onPress={logout} style={{flexDirection: 'row', alignItems: 'center'}}>
+                            <Image source={logoutIcon} style={{width: 24, height: 24, marginRight: 40}} />
+                            <Text style={{fontSize: 18}}>Logout</Text>
                         </TouchableOpacity>
                     </View>
 
