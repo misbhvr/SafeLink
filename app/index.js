@@ -25,25 +25,25 @@ import LoginScreen from './Login'
 import logoutIcon from '../assets/icons/logout.png';
 
 
-const App = () => {
-    const router = useRouter();
-    return (
-        <Stack.Navigator>
-            <Stack.Screen name="Home" component={Home} />
-            <Stack.Screen
-                name="Login"
-                component={LoginScreen}
-                options={{
-                    headerLeft: () => (
-                        <TouchableOpacity onPress={() => navigation.goBack()}>
-                            <Text>Go back</Text>
-                        </TouchableOpacity>
-                    )
-                }}
-            />
-        </Stack.Navigator>
-    );
-};
+// const App = () => {
+//     const router = useRouter();
+//     return (
+//         <Stack.Navigator>
+//             <Stack.Screen name="Home" component={Home} />
+//             <Stack.Screen
+//                 name="Login"
+//                 component={LoginScreen}
+//                 options={{
+//                     headerLeft: () => (
+//                         <TouchableOpacity onPress={() => navigation.goBack()}>
+//                             <Text>Go back</Text>
+//                         </TouchableOpacity>
+//                     )
+//                 }}
+//             />
+//         </Stack.Navigator>
+//     );
+// };
 
 const Home = () => {
     const navigation = useNavigation();
