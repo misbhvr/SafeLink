@@ -15,7 +15,6 @@ import FullMap from "./FullMap";
 import LoginScreen from "./Login";
 import SettingsPage from "./Setting";
 
-
 const App = () => {
     return (
         <Stack.Navigator>
@@ -74,23 +73,22 @@ const Home = () => {
 
                     <View style = {{marginBottom: 20}}>
                         <TouchableOpacity onPress={toggleMenu} style={{flexDirection: 'row', alignItems: 'center'}}>
-                            <Image source={close} style={{width: 18, height: 18, marginRight: 10}} />
+                            <Image source={close} style={{width: 18, height: 18, marginRight: 7}} />
                             <Text style={{fontSize: 18}}>Close</Text>
                         </TouchableOpacity>
                     </View>
 
                     <View style = {{marginBottom: 20}}>
                         <TouchableOpacity onPress={logout}style={{flexDirection: 'row', alignItems: 'center'}}>
-                            <Image source={logoutIcon} style={{width: 18, height: 18, marginRight: 10}} />
+                            <Image source={logoutIcon} style={{width: 18, height: 18, marginRight: 7}} />
                             <Text style={{fontSize: 18}}>Logout</Text>
                         </TouchableOpacity>
                     </View>
 
                     <TouchableOpacity onPress={navigateToAboutUs} style={{flexDirection: 'row', alignItems: 'center'}}>
-                        <Image source={aboutUs} style={{width: 18, height: 18, marginRight: 10}} />
+                        <Image source={aboutUs} style={{width: 18, height: 18, marginRight: 7}} />
                         <Text style={{fontSize: 18}}>About Us</Text>
                     </TouchableOpacity>
-
                 </View>
             </Modal>
 
