@@ -1,55 +1,66 @@
-import { View, Text, TextInput, StyleSheet, Pressable, TouchableOpacity, Alert,Image } from 'react-native'
+import { View, TextInput, StyleSheet, Text, TouchableOpacity, Pressable, Image } from 'react-native'
 import React, { useState } from 'react'
-import { Stack, useRouter } from 'expo-router';
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import { auth } from './firebase'
-import { signInWithEmailAndPassword } from 'firebase/auth';
-import styles from "./login.style"
+import { Validator } from 'email-validator'
+import { auth } from './firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { router } from 'expo-router'
+import styles from './signup.style'
 
-const Login = ({navigation}) => {
-    const router = useRouter();
-    const loginFormSchema = Yup.object().shape({
+const SignUp = ({navigation}) => {
+    const SignupFormSchema = Yup.object().shape({
         email: Yup.string().email().required('An email is required'),
-        password: Yup.string().required().min(8, 'Password must contain at least 8 characters')
+        username: Yup.string().required().min(2, 'Username must be at least 2 characters'),
+        password: Yup.string()
+            .required()
+            .min(6, 'Password must be at least 6 characters'),
     })
 
-    const onLogin = async (email, password) => {
+    const onSignUp = async (email, password) => {
         try {
-            await signInWithEmailAndPassword(auth, email, password);
-            console.log('Firebase login successful!', email, password);
-            router.push('/Index');
+            await createUserWithEmailAndPassword(auth, email, password);
+            console.log('Firebase sign up successful!', email);
         } catch (error) {
-            Alert.alert(error.message);
+            console.error('Error signing up:', error.message);
         }
     };
 
     return (
         <View style={styles.wrapper}>
+            <Image source={require('../assets/icons/logo.png')} style={styles.logo} />
             <Formik
-                initialValues={{email: '', password: ''}}
+                initialValues={{email: '', username: '', password: ''}}
                 onSubmit={values => {
-                    onLogin(values.email, values.password)
+                    onSignUp(values.email, values.password);
+                    console.log(values, "Successfully signed up!")
+                    router.push('/Index')
                 }}
-                validationSchema={loginFormSchema}
+                validationSchema={SignupFormSchema}
                 validateOnMount={true}
             >
-                {({ handleChange, handleBlur, handleSubmit, values, isValid }) => (
+                {({ handleChange, handleBlur, handleSubmit, values, isValid  }) => (
                     <>
-                        <Image source={require('../assets/icons/logo.png')} style={styles.logo}/>
                         <View style={styles.inputField}>
-
                             <TextInput
                                 placeholderTextColor='gray'
                                 placeholder='Email'
                                 autoCapitalize='none'
-                                textcontentType='emailAddress'
                                 onChangeText={handleChange('email')}
                                 onBlur={handleBlur('email')}
                                 value={values.email}
                             />
                         </View>
-
+                        <View style={styles.inputField}>
+                            <TextInput
+                                placeholderTextColor='gray'
+                                placeholder='Username'
+                                autoCapitalize='none'
+                                onChangeText={handleChange('username')}
+                                onBlur={handleBlur('username')}
+                                value={values.username}
+                            />
+                        </View>
                         <View style={styles.inputField}>
                             <TextInput
                                 placeholderTextColor='gray'
@@ -63,21 +74,19 @@ const Login = ({navigation}) => {
                                 value={values.password}
                             />
                         </View>
-
                         <View style={styles.buttonContainer}>
                             <Pressable
                                 titleSize={20}
                                 style={[styles.button(isValid), { width: "70%", alignItems: "center", marginTop: 20 }]}
                                 onPress={handleSubmit}
                             >
-                                <Text style={styles.buttonText}>Login</Text>
+                                <Text style={styles.buttonText}>Sign Up!</Text>
                             </Pressable>
                         </View>
-
                         <View style={styles.signupContainer}>
-                            <Text style={styles.standardText}>Don't have an account? </Text>
-                            <TouchableOpacity onPress = {() => router.push('/SignUp')}>
-                                <Text style={styles.signUpText}>Sign Up</Text>
+                            <Text style={styles.standardText}>Already have an account? </Text>
+                            <TouchableOpacity onPress={() => router.push('/Login')}>
+                                <Text style={styles.signUpText}>Login</Text>
                             </TouchableOpacity>
                         </View>
                     </>
@@ -87,6 +96,4 @@ const Login = ({navigation}) => {
     )
 }
 
-
-
-export default Login
+export default SignUp;

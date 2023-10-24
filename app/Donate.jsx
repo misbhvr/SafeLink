@@ -74,7 +74,7 @@ const DonationsPage = () =>
                     headerLeft: () => (
                         <ScreenHeaderBtn
                             iconUrl = {icons.left}
-                            dimension = {"100%"}
+                            dimension = {"70%"}
                             onPress = {() => navigation.goBack()}
                         />
                     ),

@@ -7,12 +7,9 @@
     <list default="true" id="6ecd5147-8ffe-407c-8ebe-e6a836538306" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Donate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/Donate.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/twitterfeed/TwitterFeed.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/twitterfeed/TwitterFeed.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/aboutus.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/aboutus.style.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/donate.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/donate.style.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/home/twitterfeed/twitterfeed.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/twitterfeed/twitterfeed.style.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/welcome/Welcome.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/welcome/Welcome.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/home/welcome/welcome.style.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/home/welcome/welcome.style.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +74,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "jason",
-    "last_opened_file_path": "C:/Users/Jason/PhpstormProjects/SafeLink/assets/images",
+    "last_opened_file_path": "C:/Users/Jason/Documents/Sprint2_SafeLink",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -124,7 +121,8 @@
       <workItem from="1697803045649" duration="4027000" />
       <workItem from="1697855934240" duration="3318000" />
       <workItem from="1697945439651" duration="552000" />
-      <workItem from="1698061641975" duration="9349000" />
+      <workItem from="1698061641975" duration="10155000" />
+      <workItem from="1698111470422" duration="1530000" />
     </task>
     <servers />
   </component>

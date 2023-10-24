@@ -9,23 +9,22 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         padding: 20,
     },
+    descriptionContainer: {
+        backgroundColor: COLORS.babyBlue,
+        borderRadius: 10,
+        padding: 10,
+    },
     description: {
         fontFamily: FONT.regular,
         fontSize: SIZES.medium,
-        color: COLORS.secondary,
-        alignItems: "center",
+        color: COLORS.lightWhite,
         textAlign: "center",
-        borderWidth: 2,
-        borderColor: COLORS.babyBlue,
-        borderRadius: 10,
-        padding: 10,
     },
     title: {
         fontFamily: FONT.bold,
         fontSize: SIZES.xLarge,
         color: COLORS.lightWhite,
         marginTop: 2,
-
     },
     header: {
         marginTop: SIZES.large,
@@ -42,7 +41,6 @@ const styles = StyleSheet.create({
         borderRadius: SIZES.large,
         marginVertical: SIZES.medium,
     }
-
 });
 
 export default styles;

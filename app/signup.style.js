@@ -16,7 +16,6 @@ const styles = StyleSheet.create({
         resizeMode: 'contain',
         alignSelf: 'center',
     },
-
     inputField: {
         borderRadius: 10,
         padding: 12,
@@ -27,7 +26,6 @@ const styles = StyleSheet.create({
         width: "75%",
         fontStyle: FONT.regular,
     },
-
     button: (isValid) => ({
         backgroundColor: isValid ? '#3D8AF7' : '#7EB0F5',
         alignItems: 'center',
@@ -59,7 +57,6 @@ const styles = StyleSheet.create({
         fontSize: SIZES.medium,
         fontStyle: FONT.regular,
     },
-
     signupContainer: {
         flexDirection: 'row',
         width: '100%',

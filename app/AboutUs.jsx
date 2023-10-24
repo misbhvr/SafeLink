@@ -11,9 +11,11 @@ const AboutUsPage = () => {
                 <Text style={styles.title}>SafeLink</Text>
             </View>
             <Image source={group} style={styles.image}/>
-            <Text style={styles.description}>
-                SafeLink is a mobile application built to provide disaster relief and connect those in need with local aid organizations. The app provides real-time updates on disasters happening nearby and allows users to donate to vetted aid organizations responding to crises. SafeLink aims to get help to those who need it quickly and efficiently.
-            </Text>
+            <View style={styles.descriptionContainer}>
+                <Text style={styles.description}>
+                    The team starting from left to right, consists of Kobe, Jason, Samantha and Salsabil, and together we wanted to make SafeLink which is a mobile application built to provide disaster relief and connect those in need with local aid organizations. The app provides real-time updates on disasters happening nearby and allows users to donate to vetted aid organizations responding to crises. SafeLink aims to get help to those who need it quickly and efficiently.
+                </Text>
+            </View>
         </View>
     );
 }
