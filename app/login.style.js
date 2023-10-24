@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         borderWidth: 1,
         width: "75%",
-        fontStyle: FONT.regular,
     },
 
     button: (isValid) => ({
@@ -52,12 +51,12 @@ const styles = StyleSheet.create({
     standardText: {
         color: 'black',
         fontSize: SIZES.medium,
-        fontStyle: FONT.regular,
+        fontStyle: "normal",
     },
     signUpText: {
         color: COLORS.babyBlue,
         fontSize: SIZES.medium,
-        fontStyle: FONT.regular,
+        fontStyle: "normal",
     },
 
     signupContainer: {
