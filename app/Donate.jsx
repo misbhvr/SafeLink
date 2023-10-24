@@ -5,6 +5,12 @@ import {COLORS, icons, SIZES, images} from '../constants'
 import {ScreenHeaderBtn} from "../components";
 import styles from "./donate.style"
 import { useNavigation } from "expo-router";
+import food from "../assets/images/GlobalFood.jpg"
+import flood from "../assets/images/LibyaFlood.jpg"
+import moroccan from "../assets/images/Moroccan.jpg"
+import Icon from 'react-native-vector-icons/Ionicons';
+
+
 
 const DonationsPage = () =>
 {
@@ -34,49 +40,53 @@ const DonationsPage = () =>
             id: 1,
             text: 'Libya Flood Emergency',
             url: 'https://www.unicef.org.nz/appeals/libya-flood-emergency',
-            description: 'Help provide emergency supplies to families affected by flooding in Libya'
+            description: 'Help provide emergency supplies to families affected by flooding in Libya',
+            images: flood,
         },
         {
             id: 2,
             text: 'Global Malnutrition Crisis',
             url: 'https://www.unicef.org.nz/appeals/the-greatest-need',
-            description: 'Support Unicef\'s efforts to treat and prevent malnutrition around the world'
+            description: 'Support Unicef\'s efforts to treat and prevent malnutrition around the world',
+            images: food,
         },
         {
             id: 3,
             text: 'Moroccan Earthquake',
             url: 'https://www.unicef.org.nz/appeals/global-malnutrition-crisis',
-            description: 'Bring relief to children impacted by the recent earthquake in Morocco'
+            description: 'Bring relief to children impacted by the recent earthquake in Morocco',
+            images: moroccan,
         },
     ];
 
     //Donation Card component
-    const DonationCard = ({url, text, description}) => (
+    const DonationCard = ({url, text, description, images}) => (
         <TouchableOpacity
             style = { {flex: 1, margin: 10} }
             onPress = {() => openDonationLink(url)}>
-            <View style = {[styles.donationCard, {backgroundColor: 'lightgrey', alignItems: 'center'}]}>
-                <Text style={{fontFamily: 'DMBold', fontSize: 20}}>
+            <View style = {[styles.donationCard, {backgroundColor: COLORS.babyBlue, alignItems: 'center'}]}>
+                <Text style={styles.headerTitle}>
                     {text}
                 </Text>
-                <View style={{flexDirection: 'row'}}>
+                <View style={{flexDirection: 'row', marginTop: 10}}>
                     <Image
-                        source = {images.unicef}
+                        source = {images}
                         resizeMode = "contain"
                         style = { {...styles.logoImage, borderRadius: 5, width: 100, height: 100} }
                     />
                     <View style = {{flex: 1, marginLeft: 10}}>
-                        <Text style = {styles.jobName}>
-                            learn more
-                        </Text>
                         <Text style = {styles.descriptionText}>
                             {description}
+                        </Text>
+                        <Text style = {styles.descriptionText}>
+                            learn more
                         </Text>
                     </View>
                 </View>
             </View>
         </TouchableOpacity>
     )
+
 
 
     //render donation cards
@@ -95,19 +105,20 @@ const DonationsPage = () =>
                     headerShadowVisible: false,
 
                     headerLeft: () => (
-                        <ScreenHeaderBtn
-                            iconUrl = {icons.left}
-                            dimension = {"100%"}
-                            onPress = {() => navigation.goBack()}
+                        <Icon
+                            name="ios-arrow-back"
+                            size={25}
+                            color="black"
+                            onPress={() => navigation.goBack()}
                         />
                     ),
                     headerTitle: ''
                 }} />
 
             <View style = { { flex: 1, paddingHorizontal: 10 } }>
-                <Text style = {styles.headerTitle}>
-                    Feel free to donate here
-                </Text>
+                <View style={styles.headerTitleContainer}>
+                    <Text style = {styles.headerTitle}>Feel free to donate here</Text>
+                </View>
 
                 <FlatList
                     data = {data}

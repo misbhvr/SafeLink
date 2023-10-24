@@ -7,13 +7,11 @@ const screenWidth = Dimensions.get("window").width;
 const styles = StyleSheet.create({
     headerTitle: {
         fontFamily: FONT.bold,
-        fontSize: SIZES.xLarge,
-        color: COLORS.primary,
+        fontSize: SIZES.large,
+        color: COLORS.white,
         backgroundColor: COLORS.babyBlue,
         textAlign: "center",
-        padding: SIZES.small,
-        marginTop: SIZES.small,
-        borderRadius: 10,
+        borderRadius: 5,
         width: '100%'
     },
     donationCard: {
@@ -101,10 +99,16 @@ const styles = StyleSheet.create({
     }),
     descriptionText: {
         fontSize: SIZES.medium - 2,
-        color: COLORS.gray,
+        color: COLORS.white,
         fontFamily: FONT.regular,
         marginTop: SIZES.small / 2
     },
+    headerTitleContainer: {
+        backgroundColor: COLORS.babyBlue,
+        padding: 10,
+        alignItems: "center",
+        borderRadius: 5,
+    }
 });
 
 export default styles;
