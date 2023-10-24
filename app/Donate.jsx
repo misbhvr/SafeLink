@@ -10,8 +10,6 @@ import flood from "../assets/images/LibyaFlood.jpg"
 import moroccan from "../assets/images/Moroccan.jpg"
 import Icon from 'react-native-vector-icons/Ionicons';
 
-
-
 const DonationsPage = () =>
 {
     const navigation = useNavigation();

@@ -6,16 +6,12 @@ import * as Yup from 'yup'
 import { auth } from './firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import styles from "./login.style"
-import Home from "./index";
-
-
 
 const Login = () => {
     const loginFormSchema = Yup.object().shape({
         email: Yup.string().email().required('An email is required'),
         password: Yup.string().required().min(8, 'Password must contain at least 8 characters')
     })
-
 
     const navigation = useNavigation();
     const onLogin = async (email, password) => {
@@ -80,7 +76,7 @@ const Login = () => {
 
                         <View style={styles.signupContainer}>
                             <Text style={styles.standardText}>Don't have an account? </Text>
-                            <TouchableOpacity onPress = {() => router.push('/SignUp')}>
+                            <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
                                 <Text style={styles.signUpText}>Sign Up</Text>
                             </TouchableOpacity>
                         </View>
